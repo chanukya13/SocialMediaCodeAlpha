@@ -36,12 +36,13 @@ public/
     data/              # Fictional users, posts, and trends
     services/          # Mock data access and preference persistence
     components/        # Rendering functions
-    utils/             # Icons, escaping, feedback, scrolling
+    utils/             # Icons, image recovery, escaping, feedback, scrolling
     main.js            # Application state and event handling
   assets/              # Local photos, icons, attribution, fallback
 tests/
   frontend_smoke.py     # Browser interaction and layout checks
   frontend_validation.py # Edge cases, navigation, and accessibility regressions
+  frontend_images.py    # Image failures, subdirectory paths, and card containment
 ```
 
 Components read through `feed-service.js`. Future backend integration can replace this boundary without coupling API requests to card markup. User-provided text is escaped before rendering. There are no Express APIs, database, authentication, or login screens.
@@ -53,9 +54,9 @@ This environment provides Python Playwright and Chromium. With the server runnin
 ```sh
 npm run test:browser
 # Or, without npm:
-python3 tests/frontend_smoke.py && python3 tests/frontend_validation.py
+python3 tests/frontend_smoke.py && python3 tests/frontend_validation.py && python3 tests/frontend_images.py
 ```
 
 The runner uses installed Chromium at `/usr/bin/chromium`. Set `CHROMIUM_PATH`, `CONNECTLY_URL`, or `CONNECTLY_TEST_OUTPUT` to override browser, address, or artifact folder. Playwright is test tooling only and is not required to run the app. Screenshots and test artifacts are ignored by Git.
 
-Photo sources are listed in [SOURCES.md](public/assets/images/SOURCES.md).
+Photo sources are listed in [SOURCES.md](public/assets/images/SOURCES.md), with upstream license notices retained alongside them. All photos are local. Failed avatars and post photos get separate local placeholders, with an inline SVG backup if those placeholders cannot load. The recovery handler also checks static photos that failed before the main JavaScript was ready.

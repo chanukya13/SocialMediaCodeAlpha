@@ -7,6 +7,6 @@
   "scripts": {
     "dev": "python3 -m http.server 3000 --bind 0.0.0.0 --directory public",
     "start": "npm run dev",
-    "test:browser": "python3 tests/frontend_smoke.py && python3 tests/frontend_validation.py"
+    "test:browser": "python3 tests/frontend_smoke.py && python3 tests/frontend_validation.py && python3 tests/frontend_images.py"
   }
 }

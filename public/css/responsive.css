@@ -2,9 +2,6 @@
   .app-layout {
     gap: 42px;
   }
-  .post-media img {
-    height: 320px;
-  }
 }
 @media (max-width: 1200px) {
   .topbar {
@@ -49,9 +46,6 @@
   .feed-heading p:last-child {
     font-size: 10px;
   }
-  .post-media img {
-    height: 255px;
-  }
 }
 @media (max-width: 1023px) {
   .topbar {
@@ -90,9 +84,6 @@
   }
   .header-actions {
     gap: 16px;
-  }
-  .post-media img {
-    height: 320px;
   }
   .feed-heading p:last-child {
     font-size: 11px;
@@ -270,18 +261,16 @@
   }
   .post-copy {
     padding: 0 16px 14px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .post-topic {
     font-size: 8px;
     padding: 3px 6px;
   }
   .post-media {
-    padding: 0 8px;
-  }
-  .post-media img {
-    height: 260px;
-    border-radius: 8px;
+    margin: 0 10px;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
   }
   .post-stats {
     margin: 0 16px;

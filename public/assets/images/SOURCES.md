@@ -14,6 +14,6 @@ Photographs illustrate fictional profiles and posts. They do not depict Connectl
 | `mountains.jpg` | [Source](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-grayscale/master/dist/assets/img/bg-masthead.jpg)       |
 | `workspace.jpg` | [Source](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-clean-blog/master/dist/assets/img/home-bg.jpg)          |
 
-Sources: Start Bootstrap Agency, Landing Page, Grayscale, and Clean Blog. Their template code is MIT licensed; photo rights remain with the original photographers. See upstream template image credits and the [Unsplash license](https://unsplash.com/license). Review asset suitability before production release.
+Sources: Start Bootstrap Agency, Landing Page, Grayscale, and Clean Blog. The upstream distributions use the MIT license; their copyright and permission notice is retained in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Original photo rights remain with their photographers; the profiles here are fictional and do not imply endorsement.
 
-Downloaded for this preview on 2026-11-14. The logo and fallback illustration were created for this project.
+Downloaded for this preview on 2026-11-14. No external photo service is used at runtime. The logo, avatar fallback, and landscape fallback illustrations were created for this project. If a local fallback file cannot load, an original inline SVG is used as a final safety net.

@@ -7,6 +7,7 @@ import {
 import { updateNavigation } from "./components/navigation.js";
 import { hydrateIcons, icon } from "./utils/icons.js";
 import { escapeHTML as e, toast, scrollToTop } from "./utils/dom.js";
+import { initializeImageFallbacks } from "./utils/images.js";
 
 const state = {
   view: "home",
@@ -18,6 +19,7 @@ const state = {
 };
 const $ = (selector) => document.querySelector(selector);
 let attachedPhoto = null;
+initializeImageFallbacks();
 hydrateIcons();
 $("#year").textContent = new Date().getFullYear();
 function renderFeed() {
@@ -339,19 +341,6 @@ document.querySelectorAll("dialog").forEach((dialog) =>
         dialog.close();
     }
   }),
-);
-document.addEventListener(
-  "error",
-  (event) => {
-    if (
-      event.target instanceof HTMLImageElement &&
-      !event.target.dataset.fallback
-    ) {
-      event.target.dataset.fallback = "true";
-      event.target.src = "assets/image-fallback.svg";
-    }
-  },
-  true,
 );
 renderSidebar();
 renderFeed();

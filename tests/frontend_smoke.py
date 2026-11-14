@@ -143,9 +143,11 @@ with sync_playwright() as runner:
     expect(page.locator('#publish-post')).to_be_disabled()
     check('Composer validates empty input and publishes safe mock text and emoji')
 
-    page.locator('#photo-button').focus()
+    photo_button = page.locator('#photo-button')
+    photo_button.focus()
+    expect(photo_button).to_be_focused()
     with page.expect_file_chooser() as picker:
-        page.keyboard.press('Enter')
+        photo_button.press('Enter')
     picker.value.set_files([])
     check('Photo picker is usable from the keyboard')
 
@@ -197,6 +199,14 @@ with sync_playwright() as runner:
         expect(page.locator('.empty-state')).to_be_visible()
         page.locator('[data-view="home"]').click()
         if width in [390,768,1440]:
+            # A loaded image can still await asynchronous decoding. Capture the
+            # actual decoded elements, including photos below the initial fold.
+            page.locator('img[src]').evaluate_all('''async imgs => {
+              await Promise.all(imgs.map(async image => {
+                image.loading = 'eager';
+                await image.decode();
+              }));
+            }''')
             page.screenshot(path=str(OUTPUT/f'connectly-{width}.png'), full_page=True)
     check('Nine viewport widths: 320–1440px, working navigation, no horizontal overflow')
 

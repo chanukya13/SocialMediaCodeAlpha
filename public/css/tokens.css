@@ -10,7 +10,9 @@
   --accent-soft: #fff0ec;
   --green: #53a78d;
   --radius: 18px;
+  --radius-media: 12px;
   --shadow: 0 3px 18px #27334a03;
+  --shadow-hover: 0 6px 24px #27334a08;
   --font: Inter, "Segoe UI", Arial, sans-serif;
   --ease: 180ms ease;
   --header: 88px;
