@@ -1,0 +1,375 @@
+@media (min-width: 1600px) {
+  .app-layout {
+    gap: 42px;
+  }
+  .post-media img {
+    height: 320px;
+  }
+}
+@media (max-width: 1200px) {
+  .topbar {
+    grid-template-columns: 190px minmax(200px, 1fr) auto;
+    gap: 28px;
+    padding: 0 26px;
+  }
+  .app-layout {
+    grid-template-columns: 185px minmax(0, 1fr) 260px;
+    gap: 24px;
+    padding: 28px 26px;
+  }
+  .sidebar-note {
+    padding: 18px;
+  }
+  .sidebar-note h2 {
+    font-size: 15px;
+  }
+  .discovery-card {
+    padding: 18px;
+  }
+  .suggestion {
+    gap: 8px;
+  }
+  .suggestion-user {
+    gap: 8px;
+  }
+  .suggestion .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .follow-button {
+    padding: 4px 7px;
+    min-width: 52px;
+  }
+  .demo-label {
+    display: none;
+  }
+  .heading-spark {
+    display: none;
+  }
+  .feed-heading p:last-child {
+    font-size: 10px;
+  }
+  .post-media img {
+    height: 255px;
+  }
+}
+@media (max-width: 1023px) {
+  .topbar {
+    grid-template-columns: 160px minmax(0, 1fr) auto;
+    padding: 0 30px;
+  }
+  .app-layout {
+    grid-template-columns: 165px minmax(0, 650px);
+    max-width: 960px;
+    gap: 28px;
+    padding: 28px 30px;
+  }
+  .right-sidebar {
+    display: none;
+  }
+  .nav-item {
+    padding: 13px 12px;
+    gap: 12px;
+  }
+  .nav-new {
+    display: none;
+  }
+  .sidebar-note {
+    padding: 18px 15px;
+  }
+  .sidebar-note > span {
+    font-size: 6px;
+    letter-spacing: 0.6px;
+  }
+  .new-post-button {
+    font-size: 11px;
+    padding: 13px 8px;
+  }
+  .brand {
+    font-size: 25px;
+  }
+  .header-actions {
+    gap: 16px;
+  }
+  .post-media img {
+    height: 320px;
+  }
+  .feed-heading p:last-child {
+    font-size: 11px;
+  }
+}
+@media (max-width: 760px) and (min-width: 641px) {
+  .app-layout {
+    grid-template-columns: 62px minmax(0, 1fr);
+    gap: 22px;
+    padding: 24px;
+  }
+  .topbar {
+    grid-template-columns: 145px minmax(0, 1fr) auto;
+    padding: 0 24px;
+    gap: 20px;
+  }
+  .nav-item {
+    justify-content: center;
+    padding: 16px 10px;
+  }
+  .nav-item > span:not([data-icon]),
+  .nav-item > i {
+    display: none;
+  }
+  .new-post-button {
+    height: 46px;
+  }
+  .new-post-button > span:not([data-icon]) {
+    display: none;
+  }
+  .sidebar-note,
+  .sidebar-bottom {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --header: 72px;
+  }
+  .topbar {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 0 18px;
+    height: auto;
+    min-height: var(--header);
+    padding-bottom: 12px;
+    padding-top: 14px;
+  }
+  .brand {
+    font-size: 25px;
+  }
+  .brand img {
+    width: 30px;
+    height: 30px;
+  }
+  .header-actions {
+    gap: 11px;
+  }
+  .header-actions .avatar {
+    width: 31px;
+    height: 31px;
+  }
+  .search {
+    grid-row: 2;
+    grid-column: 1/-1;
+    margin-top: 5px;
+    max-width: none;
+    height: 37px;
+    padding: 0 11px;
+  }
+  .search input {
+    font-size: 11px;
+  }
+  .search kbd {
+    display: none;
+  }
+  .app-layout {
+    display: block;
+    padding: 23px 16px 85px;
+  }
+  .left-sidebar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    min-height: 0;
+    height: 68px;
+    max-height: none;
+    background: #ffffffef;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid var(--border);
+    padding: 4px 12px max(4px, env(safe-area-inset-bottom));
+    display: block;
+  }
+  .main-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 3px;
+    height: 100%;
+  }
+  .nav-item {
+    flex-direction: column;
+    gap: 2px;
+    padding: 7px 5px;
+    width: 25%;
+    justify-content: center;
+    font-size: 9px;
+    border-radius: 9px;
+  }
+  .nav-item .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .nav-item .nav-new,
+  .nav-indicator,
+  .saved-count {
+    display: none !important;
+  }
+  .new-post-button,
+  .sidebar-note,
+  .sidebar-bottom {
+    display: none;
+  }
+  .feed-heading {
+    margin: 0 3px 21px;
+  }
+  .feed-heading h1 {
+    font-size: 25px;
+    letter-spacing: -0.9px;
+  }
+  .feed-heading .eyebrow {
+    font-size: 8px;
+    margin-bottom: 8px;
+    letter-spacing: 1.4px;
+  }
+  .feed-heading p:last-child {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+  .composer {
+    padding: 16px 16px 12px;
+    border-radius: 14px;
+  }
+  .composer textarea {
+    font-size: 12px;
+  }
+  .composer-tools {
+    gap: 17px;
+  }
+  .composer-tool {
+    font-size: 10px;
+  }
+  .composer-top .avatar {
+    width: 34px;
+    height: 34px;
+  }
+  .composer-top {
+    gap: 10px;
+  }
+  .post-button {
+    padding: 7px 13px;
+  }
+  .post-top {
+    padding: 18px 16px 12px;
+    gap: 8px;
+  }
+  .post-author {
+    gap: 9px;
+  }
+  .post-author .avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .post-copy {
+    padding: 0 16px 14px;
+    font-size: 12px;
+  }
+  .post-topic {
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+  .post-media {
+    padding: 0 8px;
+  }
+  .post-media img {
+    height: 260px;
+    border-radius: 8px;
+  }
+  .post-stats {
+    margin: 0 16px;
+    font-size: 9px;
+  }
+  .post-actions {
+    padding: 7px 10px;
+  }
+  .post-action {
+    font-size: 9px;
+    padding: 8px;
+    gap: 5px;
+  }
+  .post-action .icon {
+    width: 16px;
+    height: 16px;
+  }
+  .post-card {
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+  .feed-toolbar {
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
+  .feed-tabs {
+    gap: 26px;
+  }
+  .feed-tab {
+    font-size: 11px;
+  }
+  .author-name {
+    font-size: 11px;
+  }
+  .author-meta {
+    font-size: 9px;
+  }
+  .comments-panel {
+    padding: 15px 16px;
+  }
+  .toast {
+    bottom: 82px;
+    font-size: 11px;
+    padding: 11px 17px;
+  }
+  .notification-panel {
+    top: 62px;
+    right: 16px;
+    width: min(300px, calc(100vw - 32px));
+  }
+  .profile-dialog,
+  .about-dialog {
+    padding: 26px;
+  }
+  .profile-dialog h2 {
+    font-size: 21px;
+  }
+  html {
+    scroll-padding-top: 150px;
+  }
+}
+@media (max-width: 360px) {
+  .app-layout {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .feed-heading h1 {
+    font-size: 23px;
+  }
+  .post-action {
+    padding: 7px 5px;
+    gap: 4px;
+  }
+  .post-topic {
+    display: none;
+  }
+  .composer-tool span:not([data-icon]) {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

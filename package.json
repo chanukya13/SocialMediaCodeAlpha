@@ -1,0 +1,12 @@
+{
+  "name": "connectly-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Connectly Phase 1 — HTML, CSS, and vanilla JavaScript frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 3000 --bind 0.0.0.0 --directory public",
+    "start": "npm run dev",
+    "test:browser": "python3 tests/frontend_smoke.py && python3 tests/frontend_validation.py"
+  }
+}
