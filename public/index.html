@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f9fb" />
+    <meta
+      name="description"
+      content="Connectly — a little closer to the people and ideas that inspire you."
+    />
+    <title>Connectly — Your daily connection</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to feed</a>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Connectly home"
+        ><img
+          src="assets/logo.svg"
+          alt=""
+          width="34"
+          height="34"
+        />connectly<span class="brand-dot">.</span></a
+      >
+      <form class="search" role="search" id="search-form">
+        <span data-icon="search"></span
+        ><input
+          id="search-input"
+          type="search"
+          placeholder="Search people, posts, inspiration…"
+          aria-label="Search people and posts"
+          autocomplete="off"
+        /><kbd>/</kbd>
+      </form>
+      <div class="header-actions">
+        <span class="demo-label"><i></i> Frontend preview</span
+        ><button
+          class="icon-button notification-trigger"
+          id="notifications-button"
+          aria-label="Notifications"
+          aria-expanded="false"
+          aria-controls="notifications"
+        >
+          <span data-icon="bell"></span
+          ><span class="notification-dot"></span></button
+        ><button
+          class="avatar-button"
+          data-profile="you"
+          aria-label="View your profile"
+        >
+          <img
+            class="avatar"
+            src="assets/images/you.jpg"
+            alt="Profile photo of Alex Morgan"
+          />
+        </button>
+      </div>
+      <section
+        class="notification-panel card"
+        id="notifications"
+        aria-label="Notifications"
+        hidden
+      >
+        <h2>You're all caught up <span>✦</span></h2>
+        <p>
+          A little quiet is a good thing. Your new notifications will appear
+          here.
+        </p>
+        <small>This is a frontend demo.</small>
+      </section>
+    </header>
+    <div class="app-layout">
+      <aside class="left-sidebar" aria-label="Primary sidebar">
+        <nav class="main-nav" aria-label="Main navigation">
+          <button
+            class="nav-item active"
+            data-view="home"
+            aria-current="page"
+            aria-label="Home"
+          >
+            <span data-icon="home"></span><span>Home</span
+            ><i class="nav-indicator"></i>
+          </button>
+          <button class="nav-item" data-view="explore" aria-label="Explore">
+            <span data-icon="compass"></span><span>Explore</span
+            ><span class="nav-new">NEW</span>
+          </button>
+          <button class="nav-item" data-view="saved" aria-label="Bookmarks">
+            <span data-icon="bookmark"></span><span>Bookmarks</span
+            ><span class="saved-count">0</span>
+          </button>
+          <button class="nav-item" data-profile="you" aria-label="My profile">
+            <span data-icon="user"></span><span>My profile</span>
+          </button>
+        </nav>
+        <button
+          class="primary-button new-post-button"
+          id="new-post"
+          aria-label="Create a post"
+        >
+          <span data-icon="plus"></span><span>Create a post</span>
+        </button>
+        <section class="sidebar-note">
+          <div class="note-decoration" data-icon="spark"></div>
+          <h2>Good things start<br />with a connection.</h2>
+          <p>
+            Share a little of your world.<br />You never know who you'll
+            inspire.
+          </p>
+          <span>MAKE YOURSELF AT HOME</span>
+        </section>
+        <div class="sidebar-bottom">
+          <button class="sidebar-profile" data-profile="you">
+            <img
+              class="avatar"
+              src="assets/images/you.jpg"
+              alt="Profile photo of Alex Morgan"
+            /><span><strong>Alex Morgan</strong><small>@alexmorgan</small></span
+            ><span data-icon="more"></span>
+          </button>
+          <p>
+            © <span id="year"></span> Connectly <span>·</span> Made for
+            connection
+          </p>
+          <button class="text-button" id="about-button">
+            About this preview
+          </button>
+        </div>
+      </aside>
+      <main id="main" tabindex="-1">
+        <section class="feed-heading">
+          <div>
+            <p class="eyebrow"><span></span> YOUR DAILY CONNECTION</p>
+            <h1 id="view-title">A little closer, every day<span>.</span></h1>
+            <p id="view-description">
+              Fresh perspectives. Familiar faces. Your kind of community.
+            </p>
+          </div>
+          <span
+            class="heading-spark"
+            data-icon="spark"
+            aria-hidden="true"
+          ></span>
+        </section>
+        <section class="composer card" aria-label="Create a post">
+          <div class="composer-top">
+            <img
+              class="avatar"
+              src="assets/images/you.jpg"
+              alt="Profile photo of Alex Morgan"
+            /><label class="sr-only" for="post-text">Write your post</label
+            ><textarea
+              id="post-text"
+              placeholder="What's on your mind, Alex?"
+              maxlength="1000"
+              rows="2"
+            ></textarea>
+          </div>
+          <div class="attachment-preview" id="attachment-preview" hidden>
+            <img id="attachment-image" alt="Your selected photo" /><button
+              class="icon-button"
+              id="remove-photo"
+              aria-label="Remove selected photo"
+            >
+              <span data-icon="close"></span>
+            </button>
+          </div>
+          <div class="composer-footer">
+            <div class="composer-tools">
+              <button
+                class="composer-tool photo-tool"
+                id="photo-button"
+                type="button"
+              >
+                <span data-icon="image"></span><span>Photo</span></button
+              ><input
+                type="file"
+                id="post-photo"
+                accept="image/jpeg,image/png,image/webp"
+                hidden
+              /><button
+                class="composer-tool"
+                id="emoji-button"
+                aria-label="Add a smile to your post"
+              >
+                <span data-icon="smile"></span><span>Feeling</span>
+              </button>
+            </div>
+            <div class="composer-submit">
+              <small id="character-count" aria-live="polite"></small
+              ><button
+                class="primary-button post-button"
+                id="publish-post"
+                disabled
+              >
+                Post <span data-icon="arrow-right"></span>
+              </button>
+            </div>
+          </div>
+          <p class="composer-error" id="composer-error" role="alert" hidden></p>
+        </section>
+        <div class="feed-toolbar">
+          <div class="feed-tabs" role="group" aria-label="Feed filter">
+            <button
+              class="feed-tab active"
+              data-filter="for-you"
+              aria-pressed="true"
+            >
+              For you <span class="tab-dot"></span></button
+            ><button
+              class="feed-tab"
+              data-filter="following"
+              aria-pressed="false"
+            >
+              Following
+            </button>
+          </div>
+          <button
+            class="sort-button"
+            id="sort-button"
+            aria-label="Sort feed: latest first"
+          >
+            <span data-icon="sliders"></span><span>Latest</span>
+          </button>
+        </div>
+        <div class="active-query" id="active-query" hidden>
+          <span></span
+          ><button class="text-button" id="clear-query">
+            Clear filter <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <section
+          id="feed"
+          aria-label="Social feed"
+          aria-live="polite"
+          aria-busy="false"
+        ></section>
+        <div class="feed-end">
+          <span>✦</span>
+          <p>A little inspiration goes a long way.</p>
+          <small>You're all caught up. Go make something good.</small
+          ><button class="text-button" id="back-to-top">Back to top ↑</button>
+        </div>
+      </main>
+      <aside class="right-sidebar" aria-label="Discover your community">
+        <div id="discovery"></div>
+        <footer class="right-footer">
+          <button class="text-button" data-about>About Connectly</button
+          ><span>·</span><span>Frontend demo</span>
+          <p>Less noise. More connection. <span>✦</span></p>
+        </footer>
+      </aside>
+    </div>
+    <div class="toast" id="toast" role="status" hidden></div>
+    <dialog
+      id="profile-dialog"
+      class="profile-dialog"
+      aria-labelledby="profile-title"
+    >
+      <button class="icon-button dialog-close" aria-label="Close profile">
+        <span data-icon="close"></span>
+      </button>
+      <div id="profile-content"></div>
+    </dialog>
+    <dialog
+      id="about-dialog"
+      class="about-dialog"
+      aria-labelledby="about-title"
+    >
+      <button class="icon-button dialog-close" aria-label="Close about dialog">
+        <span data-icon="close"></span></button
+      ><img src="assets/logo.svg" alt="" width="48" height="48" />
+      <p class="eyebrow">A LITTLE CLOSER, EVERY DAY</p>
+      <h2 id="about-title">Welcome to Connectly.</h2>
+      <p>
+        A space for the people, ideas, and everyday moments that make life a
+        little richer.
+      </p>
+      <p>
+        This Phase 1 preview uses fictional people and sample photography.
+        Likes, follows, and bookmarks stay in this browser. Posts and comments
+        last for this session. No accounts, uploads, or backend services are
+        connected.
+      </p>
+      <button class="primary-button dialog-done">Make yourself at home</button>
+    </dialog>
+  </body>
+</html>
